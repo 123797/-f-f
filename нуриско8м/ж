@@ -1,0 +1,72 @@
+# 1. Удаление нулей
+numbers = [1, 0, 5, 0, 3, 0, 8]
+numbers = [ тти]
+print(numbers)
+
+# 2. Поменять местами min и max
+numbers = [10, 2, 5, 100, 1]
+min_index = numbers.index(min(numbers))
+max_index = numbers.index(max(numbers))
+numbers[min_index], numbers[max_index] = numbers[max_index], numbers[min_index]
+print(numbers)
+
+# 3. Индекс первого отрицательного
+numbers = [1, 5, -3, 4, -2]
+found_index = -1
+for i, num in enumerate(numbers):
+    if num < 0:
+        found_index = i
+        break
+print(found_index)
+
+# 4. Четные и нечетные индексы
+numbers = [10, 20, 30, 40, 50, 60]
+even_indices = numbers[::2]
+odd_indices = numbers[1::2]
+print(even_indices)
+print(odd_indices)
+
+# 5. Два одинаковых подряд
+numbers = [1, 2, 3, 3, 4]
+has_duplicates = False
+for i in range(len(numbers) - 1):
+    if numbers[i] == numbers[i + 1]:
+        has_duplicates = True
+        break
+print(has_duplicates)
+
+# 6. Уникальные элементы
+numbers = [1, 2, 2, 3, 1, 4]
+unique_list = []
+for num in numbers:
+    if num not in unique_list:
+        unique_list.append(num)
+print(unique_list)
+
+# 7. Второй по величине
+numbers = [10, 20, 5, 20, 15]
+sorted_unique = sorted(list(set(numbers)))
+if len(sorted_unique) >= 2:
+    print(sorted_unique[-2])
+else:
+    print(None)
+
+# 8. Сдвиг вправо
+numbers = [1, 2, 3, 4]
+numbers = [numbers[-1]] + numbers[:-1]
+print(numbers)
+
+# 9. Подсчёт элементов
+numbers = [1, 2, 1, 3, 2, 1]
+counts = {}
+for num in numbers:
+    if num in counts:
+        counts[num] += 1
+    else:
+        counts[num] = 1
+print(counts)
+
+# 10. Ввод и фильтрация
+user_input = input()
+numbers = [int(x) for x in user_input.split() if int(x) > 0]
+print(numbers)
